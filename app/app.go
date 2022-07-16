@@ -16,7 +16,7 @@ func (a *App) Init() {
 		app.Version = VERSION
 		app.Desc = "A tool for managing & building the ebitengine game."
 		app.On(gcli.EvtAppInit, func(data ...interface{}) bool {
-			
+
 			return false
 		})
 
@@ -44,7 +44,7 @@ func (a *App) Init() {
 	// 		return nil
 	// 	},
 	// })
-	a.BuildCmd = NewBuildCmd()
+	a.CmdApp.Add(BuildCmd)
 	a.CmdApp.Add(builtin.GenAutoComplete())
 	// .... add more ...
 }

@@ -9,7 +9,10 @@ func TestIsEbitenGame(t *testing.T) {
 		name string
 		want bool
 	}{
-		struct{name string; want bool}{name: "1",want: true},
+		struct {
+			name string
+			want bool
+		}{name: "1", want: true},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
