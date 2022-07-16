@@ -16,8 +16,7 @@ func (a *App) Init() {
 		app.Version = VERSION
 		app.Desc = "A tool for managing & building the ebitengine game."
 		app.On(gcli.EvtAppInit, func(data ...interface{}) bool {
-			// do something...
-			// fmt.Println("init app")
+			
 			return false
 		})
 
