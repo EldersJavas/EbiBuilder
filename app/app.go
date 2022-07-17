@@ -5,24 +5,15 @@ import (
 	"github.com/gookit/gcli/v3/builtin"
 )
 
-type App struct {
-	CmdApp   *gcli.App
-	BuildCmd *gcli.Command
-	Path     string
-}
+var App = gcli.NewApp(func(app *gcli.App) {
+	app.Version = VERSION
+	app.Desc = "A tool for managing & building the ebitengine game."
+	app.On(gcli.EvtAppInit, func(data ...interface{}) bool {
 
-func (a *App) Init() {
-	a.CmdApp = gcli.NewApp(func(app *gcli.App) {
-		app.Version = VERSION
-		app.Desc = "A tool for managing & building the ebitengine game."
-		app.On(gcli.EvtAppInit, func(data ...interface{}) bool {
+		return false
+	})
 
-			return false
-		})
-
-		// app.SetVerbose(gcli.VerbDebug)
-		// app.DefaultCommand("example")
-		app.Logo.Text = `
+	app.Logo.Text = `
 		
 ███████╗██████╗ ██╗██████╗ ██╗   ██╗██╗██╗     ██████╗ ███████╗██████╗ 
 ██╔════╝██╔══██╗██║██╔══██╗██║   ██║██║██║     ██╔══██╗██╔════╝██╔══██╗
@@ -32,19 +23,6 @@ func (a *App) Init() {
 ╚══════╝╚═════╝ ╚═╝╚═════╝  ╚═════╝ ╚═╝╚══════╝╚═════╝ ╚══════╝╚═╝  ╚═╝
                                                                        
 		`
-	})
-	//a.CmdApp.Add()
-	// a.CmdApp.Add(&gcli.Command{
-	// 	Name: "demo",
-	// 	// allow color tag and {$cmd} will be replace to 'demo'
-	// 	Desc: "this is a description <info>message</> for command",
-	// 	Aliases: []string{"dm"},
-	// 	Func: func (cmd *gcli.Command, args []string) error {
-	// 		gcli.Println("hello, in the demo command")
-	// 		return nil
-	// 	},
-	// })
-	a.CmdApp.Add(BuildCmd)
-	a.CmdApp.Add(builtin.GenAutoComplete())
-	// .... add more ...
-}
+	app.Add(BuildCmd)
+	app.Add(builtin.GenAutoComplete())
+})

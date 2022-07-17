@@ -1,14 +1,38 @@
 package tool
 
 import (
+	"errors"
 	"fmt"
 	"github.com/gookit/color"
+	"github.com/gookit/goutil/sysutil"
+	"github.com/hashicorp/go-version"
 	"log"
 	"os"
 	"runtime"
 	"strings"
 	"time"
 )
+
+func CheckGo() bool {
+	var Outgo, err = sysutil.QuickExec("go version")
+	if err != nil {
+		ErrorPrint("Unable to find Go")
+		return false
+	}
+	te := strings.Split(Outgo, " ")
+	Vergo, err := version.NewVersion(te[2][2:])
+	if err != nil {
+		ErrorPrint("Error go version:" + te[2][2:])
+		return false
+	}
+
+	constraints, err := version.NewConstraint(">=1.15")
+	if constraints.Check(Vergo) != true {
+		return false
+	}
+
+	return true
+}
 
 func IsEbitenGame() bool {
 
@@ -38,6 +62,32 @@ func IsEbitenGame() bool {
 	DebugPrint(fmt.Sprintf("ebiten version=%v", Versions))
 	return true
 }
+func GetEbitenVer() (string, error) {
+	var Versions string
+	f, err := os.ReadFile("./go.mod")
+	if err != nil {
+		f2, err := os.ReadFile("./main.go")
+		for _, v := range strings.Split(string(f2), "\n") {
+			if strings.Contains(v, "github.com/hajimehoshi/ebiten/v2") {
+				Versions = "2.x"
+			}
+		}
+		if err != nil {
+			return "", errors.New("no Ebitengine project in the dir")
+		}
+	}
+	for _, v := range strings.Split(string(f), "\n") {
+		if strings.Contains(v, "github.com/hajimehoshi/ebiten/v2") {
+			Versions = v[strings.LastIndex(v, "v2")+1:]
+		}
+	}
+	if Versions == "" {
+		return "", errors.New("no Ebitengine project in the dir")
+	}
+
+	DebugPrint(fmt.Sprintf("ebiten version=%v", Versions))
+	return Versions, nil
+}
 
 func DebugPrint(s interface{}) {
 	color.Debug.Printf("[Debug]%s: %v \n", time.Now().Format("2006/01/02 15:04:05.000"), s)
@@ -56,6 +106,9 @@ func StepPrint(s interface{}) {
 
 func SuccessPrint(s interface{}) {
 	color.Success.Printf("[Success]%s: %v \n", time.Now().Format("2006/01/02 15:04:05.000"), s)
+}
+func WarnPrint(s interface{}) {
+	color.Warn.Printf("[Warn]%s: %v \n", time.Now().Format("2006/01/02 15:04:05.000"), s)
 }
 
 func ExecName(s string) string {

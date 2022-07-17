@@ -12,6 +12,7 @@ require (
 	github.com/gofrs/flock v0.8.1 // indirect
 	github.com/gookit/color v1.5.1 // indirect
 	github.com/gookit/goutil v0.5.7 // indirect
+	github.com/hashicorp/go-version v1.6.0 // indirect
 	github.com/jezek/xgb v1.0.0 // indirect
 	github.com/mattn/go-isatty v0.0.14 // indirect
 	github.com/xo/terminfo v0.0.0-20210125001918-ca9a967f8778 // indirect

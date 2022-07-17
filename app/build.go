@@ -1,8 +1,10 @@
 package app
 
 import (
+	"fmt"
 	"github.com/EldersJavas/EbiBuilder/tool"
 	"github.com/gookit/gcli/v3"
+	"github.com/gookit/goutil/fsutil"
 	"github.com/gookit/goutil/sysutil"
 	"os"
 )
@@ -19,8 +21,9 @@ func NewBuildCmd() *gcli.Command {
 		Aliases:   []string{"Build", "BUILD", "buildgame"},
 		Category:  "",
 		Config: func(c *gcli.Command) {
+
 			a := ""
-			c.StrOpt(&a, "buildmode", "m", "Release", "the id option")
+			c.StrOpt(&a, "buildmode", "m", "Debug", "the id option")
 			switch a {
 			case "Debug":
 				Pj.BuildMode = Debug
@@ -28,14 +31,19 @@ func NewBuildCmd() *gcli.Command {
 				Pj.BuildMode = Release
 			case "All":
 				Pj.BuildMode = All
-
 			}
 		},
 		Hidden:   false,
 		Subs:     []*gcli.Command{},
 		Examples: "ebibuilder build",
 		Func: func(c *gcli.Command, args []string) error {
-			err := BuildGame(c)
+			v, err := tool.GetEbitenVer()
+			if err != nil {
+				tool.WarnPrint(err)
+			}
+
+			Pj.EbiVersion = v
+			err = BuildGame(c)
 			if err != nil {
 				return err
 			}
@@ -49,26 +57,46 @@ func NewBuildCmd() *gcli.Command {
 }
 
 func BuildGame(c *gcli.Command) error {
-
-	out, err := sysutil.QuickExec("go version")
-	if err != nil {
-		tool.ErrorPrint(err)
-		return err
+	var IsFileBuild = false
+	if Pj.EbiVersion == "" {
+		tool.ErrorPrint("No Ebitengine version")
+	} else if Pj.EbiVersion == "2.x" {
+		IsFileBuild = true
 	}
-	tool.DebugPrint(out)
-	tool.StepPrint("Build Debug Start")
+	tool.StepPrint("Build Start")
 	switch Pj.BuildMode {
+
+	///////////////////////////////
+	// Debug
 	case Debug:
 		err := os.MkdirAll("output/Debug/", 777)
 		if err != nil {
 			return err
 		}
-		//out, err := sysutil.QuickExec("go build -tags=ebitendebug")
+		if IsFileBuild {
+			_, err = sysutil.QuickExec(fmt.Sprintf("go build -o %v -tags=ebitendebug main.go", tool.ExecName("debug")))
+		} else {
+			_, err = sysutil.ExecCmd("go", []string{"build", "-tags=ebitendebug", "-o", tool.ExecName("debug")})
+		}
 
 		if err != nil {
 			return err
 		}
-		tool.SuccessPrint("test")
+
+		err = fsutil.CopyFile(tool.ExecName("debug"), "output/Debug/"+tool.ExecName("debug"))
+		if err != nil {
+			return err
+		}
+
+		err = fsutil.DeleteIfExist(tool.ExecName("debug"))
+		if err != nil {
+			return err
+		}
+
+		tool.SuccessPrint("Debug build Success")
+
+		////////////////////////////////
+
 	case Release:
 		err := os.MkdirAll("output/Release/", 777)
 
