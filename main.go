@@ -11,9 +11,8 @@ import (
 
 var App app.App
 
-// 测试运行: go run ./_examples/cliapp.go && ./cliapp
 func main() {
-	if color.SupportColor() {
+	if color.SupportColor() != true {
 		color.Disable()
 	}
 	tool.IsEbitenGame()

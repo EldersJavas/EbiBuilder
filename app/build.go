@@ -6,7 +6,7 @@ import (
 )
 
 var BuildCmd = NewBuildCmd()
-var Pj *Project
+var Pj Project
 
 func NewBuildCmd() *gcli.Command {
 	a := &gcli.Command{
@@ -17,23 +17,21 @@ func NewBuildCmd() *gcli.Command {
 		Aliases:   []string{},
 		Category:  "",
 		Config: func(c *gcli.Command) {
-			a:=""
+			a := ""
 			c.StrOpt(&a, "buildmode", "m", "Release", "the id option")
-			switch a{
+			switch a {
 			case "Debug":
-				Pj.BuildMode=Debug
+				Pj.BuildMode = Debug
 			case "Release":
-				Pj.BuildMode=Release
-			default:
-				Pj.BuildMode=Debug
+				Pj.BuildMode = Release
 			}
 		},
 		Hidden:   false,
 		Subs:     []*gcli.Command{},
 		Examples: "ebibuilder build",
 		Func: func(c *gcli.Command, args []string) error {
-			if Pj.BuildMode==0 {
-				err:=BuildGame(c)
+			if Pj.BuildMode == 0 {
+				err := BuildGame(c)
 				if err != nil {
 					return err
 				}
@@ -47,15 +45,14 @@ func NewBuildCmd() *gcli.Command {
 	return a
 }
 
-
 func BuildGame(c *gcli.Command) error {
 
-	out,err:=sysutil.QuickExec("git config")
-	
-	if err!=nil{
+	out, err := sysutil.QuickExec("git")
+
+	if err != nil {
 		return err
 	}
 	c.Infoln(out)
 	return nil
-	
+
 }
