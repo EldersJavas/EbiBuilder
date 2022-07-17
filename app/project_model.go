@@ -5,6 +5,7 @@ import "encoding/json"
 const (
 	Debug = iota
 	Release
+	All
 )
 
 func UnmarshalProject(data []byte) (Project, error) {

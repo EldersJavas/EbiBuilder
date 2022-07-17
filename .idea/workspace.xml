@@ -5,20 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="599f6f23-5535-41c1-a3f1-4cda1c95b160" name="变更" comment="update">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/EbiBuilder.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/markdown.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/const.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/const.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/project_model.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/project_model.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/examples/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tool/tool.go" beforeDir="false" afterPath="$PROJECT_DIR$/tool/tool.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tool/tool_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/tool/tool_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +68,7 @@
     <configuration name="go build github.com/EldersJavas/EbiBuilder" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="EbiBuilder" />
       <working_directory value="$PROJECT_DIR$" />
+      <parameters value="build" />
       <kind value="PACKAGE" />
       <package value="github.com/EldersJavas/EbiBuilder" />
       <directory value="$PROJECT_DIR$" />
@@ -101,6 +93,10 @@
       <framework value="gotest" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Go 构建.go build github.com/EldersJavas/EbiBuilder" />
+      <item itemvalue="Go 构建.go build github.com/EldersJavas/EbiBuilder/examples" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Go 构建.go build github.com/EldersJavas/EbiBuilder" />

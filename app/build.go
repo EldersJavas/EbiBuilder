@@ -1,8 +1,10 @@
 package app
 
 import (
+	"github.com/EldersJavas/EbiBuilder/tool"
 	"github.com/gookit/gcli/v3"
 	"github.com/gookit/goutil/sysutil"
+	"os"
 )
 
 var BuildCmd = NewBuildCmd()
@@ -14,7 +16,7 @@ func NewBuildCmd() *gcli.Command {
 		Arguments: gcli.Arguments{},
 		Name:      "build",
 		Desc:      "Build Ebitengine game",
-		Aliases:   []string{},
+		Aliases:   []string{"Build", "BUILD", "buildgame"},
 		Category:  "",
 		Config: func(c *gcli.Command) {
 			a := ""
@@ -24,17 +26,18 @@ func NewBuildCmd() *gcli.Command {
 				Pj.BuildMode = Debug
 			case "Release":
 				Pj.BuildMode = Release
+			case "All":
+				Pj.BuildMode = All
+
 			}
 		},
 		Hidden:   false,
 		Subs:     []*gcli.Command{},
 		Examples: "ebibuilder build",
 		Func: func(c *gcli.Command, args []string) error {
-			if Pj.BuildMode == 0 {
-				err := BuildGame(c)
-				if err != nil {
-					return err
-				}
+			err := BuildGame(c)
+			if err != nil {
+				return err
 			}
 			return nil
 		},
@@ -47,12 +50,40 @@ func NewBuildCmd() *gcli.Command {
 
 func BuildGame(c *gcli.Command) error {
 
-	out, err := sysutil.QuickExec("git")
-
+	out, err := sysutil.QuickExec("go version")
 	if err != nil {
+		tool.ErrorPrint(err)
 		return err
 	}
-	c.Infoln(out)
-	return nil
+	tool.DebugPrint(out)
+	tool.StepPrint("Build Debug Start")
+	switch Pj.BuildMode {
+	case Debug:
+		err := os.MkdirAll("output/Debug/", 777)
+		if err != nil {
+			return err
+		}
+		//out, err := sysutil.QuickExec("go build -tags=ebitendebug")
 
+		if err != nil {
+			return err
+		}
+		tool.SuccessPrint("test")
+	case Release:
+		err := os.MkdirAll("output/Release/", 777)
+
+		if err != nil {
+			return err
+		}
+		tool.SuccessPrint("test")
+	case All:
+		err := os.MkdirAll("output/Debug/", 777)
+		err = os.MkdirAll("output/Release/", 777)
+		if err != nil {
+			return err
+		}
+		tool.SuccessPrint("test")
+
+	}
+	return nil
 }

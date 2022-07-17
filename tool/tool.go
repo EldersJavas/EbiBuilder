@@ -2,10 +2,10 @@ package tool
 
 import (
 	"fmt"
-	"github.com/EldersJavas/EbiBuilder/app"
 	"github.com/gookit/color"
 	"log"
 	"os"
+	"runtime"
 	"strings"
 	"time"
 )
@@ -35,16 +35,33 @@ func IsEbitenGame() bool {
 		return false
 	}
 
-	DebugPrint(fmt.Sprintf("ebiten version=%v\n", Versions))
+	DebugPrint(fmt.Sprintf("ebiten version=%v", Versions))
 	return true
 }
 
-func DebugPrint(s string) {
-	if app.DebugMode {
-		color.Debug.Printf("[Debug]%v: %v", time.Now().Format("2006/01/02 15:04:05.000"), s)
-	}
+func DebugPrint(s interface{}) {
+	color.Debug.Printf("[Debug]%s: %v \n", time.Now().Format("2006/01/02 15:04:05.000"), s)
 }
 
-func InfoPrint(s string) {
-	color.Info.Printf("[Info]%v: %v", time.Now().Format("2006/01/02 15:04:05.000"), s)
+func InfoPrint(s interface{}) {
+	color.Info.Printf("[Info]%s: %v \n", time.Now().Format("2006/01/02 15:04:05.000"), s)
+}
+func ErrorPrint(s interface{}) {
+	color.Error.Printf("[Error]%s: %v \n", time.Now().Format("2006/01/02 15:04:05.000"), s)
+}
+
+func StepPrint(s interface{}) {
+	color.FgMagenta.Printf("[Step]%s: %v \n", time.Now().Format("2006/01/02 15:04:05.000"), s)
+}
+
+func SuccessPrint(s interface{}) {
+	color.Success.Printf("[Success]%s: %v \n", time.Now().Format("2006/01/02 15:04:05.000"), s)
+}
+
+func ExecName(s string) string {
+	switch runtime.GOOS {
+	case `windows`:
+		s = s + ".exe"
+	}
+	return s
 }
