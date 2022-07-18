@@ -4,6 +4,7 @@ package app
 
 import (
 	"github.com/EldersJavas/EbiBuilder/tool"
+	"github.com/gookit/color"
 	"github.com/gookit/gcli/v3"
 	"os"
 )
@@ -31,6 +32,22 @@ func NewConfigCmd() *gcli.Command {
 					return nil
 				},
 				Help: "init config",
+			})
+
+			c.AddSubs(&gcli.Command{
+				Name:     "print",
+				Desc:     "print project",
+				Aliases:  []string{"Print", "PRINT"},
+				Config:   nil,
+				Examples: "ebibuilder config print",
+				Func: func(c *gcli.Command, args []string) error {
+					err := PrintConfig()
+					if err != nil {
+						return err
+					}
+					return nil
+				},
+				Help: "print project",
 			})
 		},
 		Examples: "ebibuilder config",
@@ -86,5 +103,42 @@ func InitConfig() error {
 		return err
 	}
 	tool.SuccessPrint("Init Config Success, file name:config.json")
+	return nil
+}
+
+func PrintConfig() error {
+	tool.StepPrint("Print config Start")
+	file, err := os.ReadFile("build.json")
+	if err != nil {
+		return err
+	}
+	proj, err := UnmarshalProject(file)
+	if err != nil {
+		return err
+	}
+	bm := "Debug"
+	switch proj.BuildMode {
+	case Debug:
+		bm = "Debug"
+	case Release:
+		bm = "Debug"
+	case All:
+		bm = "Debug,Release"
+	}
+	color.Printf(
+		`
+
+<cyan>Go mod</>:     		 <red>%v</>
+<cyan>Ebiten v1</>:  		 <red>%v</>
+<cyan>Ebitengine version</>:      <yellow>%v</> 
+<cyan>Build Mode</>:   		 %v
+<cyan>Output Name</>:  		 %v
+<cyan>Config</>:      		 %v
+<cyan>Path</>:        		 %v
+<cyan>Game Name</>:    		 %v
+<cyan>Game version</>: 		 <yellow>%v</>
+
+`, proj.IsGomod, proj.IsEbitenv1, proj.EbiVersion, bm, proj.OutputName, proj.Config, proj.Path, proj.GameName, proj.GameVersion)
+	tool.SuccessPrint("Print config Success")
 	return nil
 }
