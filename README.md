@@ -51,6 +51,8 @@ Use "EbiBuilder COMMAND -h" for more information about a command
 - [x] **clean**
 - [ ] **create**
 - [ ] config
+  - [x] init
+  - [ ] print
 - [ ] check
   - [ ] test
   - [ ] upgrade

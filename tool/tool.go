@@ -34,7 +34,7 @@ func CheckGo() bool {
 	return true
 }
 
-func IsEbitenGame() bool {
+func IsEbitenGame() (ebitengame bool, gomod bool) {
 
 	var Versions string
 	f, err := os.ReadFile("./go.mod")
@@ -47,7 +47,7 @@ func IsEbitenGame() bool {
 		}
 		if err != nil {
 			log.Println("No Ebitengine project in the dir.")
-			return false
+			return false, false
 		}
 	}
 	for _, v := range strings.Split(string(f), "\n") {
@@ -56,11 +56,13 @@ func IsEbitenGame() bool {
 		}
 	}
 	if Versions == "" {
-		return false
+		return false, false
 	}
-
 	DebugPrint(fmt.Sprintf("ebiten version=%v", Versions))
-	return true
+	if Versions == "2.x" {
+		return true, false
+	}
+	return true, true
 }
 func GetEbitenVer() (string, error) {
 	var Versions string
@@ -90,7 +92,9 @@ func GetEbitenVer() (string, error) {
 }
 
 func DebugPrint(s interface{}) {
-	color.Debug.Printf("[Debug]%s: %v \n", time.Now().Format("2006/01/02 15:04:05.000"), s)
+	if DebugMode {
+		color.Debug.Printf("[Debug]%s: %v \n", time.Now().Format("2006/01/02 15:04:05.000"), s)
+	}
 }
 
 func InfoPrint(s interface{}) {

@@ -19,11 +19,13 @@ func (r *Project) Marshal() ([]byte, error) {
 }
 
 type Project struct {
-	IsGomod    bool   `json:"IsGomod,omitempty"`
-	IsEbitenv1 bool   `json:"IsEbitenv1,omitempty"`
-	EbiVersion string `json:"EbiVersion,omitempty"`
-	BuildMode  uint   `json:"BuildMode,omitempty"`
-	OutputName string `json:"OutputName,omitempty"`
-	Config     string `json:"Config,omitempty"`
-	Path       string `json:"Path,omitempty"`
+	IsGomod     bool   `json:"IsGomod,omitempty"`
+	IsEbitenv1  bool   `json:"IsEbitenv1,omitempty"`
+	EbiVersion  string `json:"EbiVersion,omitempty"`
+	BuildMode   uint   `json:"BuildMode,omitempty"`
+	OutputName  string `json:"OutputName,omitempty"`
+	Config      string `json:"Config,omitempty"`
+	Path        string `json:"Path,omitempty"`
+	GameName    string `json:"GameName,omitempty"`
+	GameVersion string `json:"GameVersion,omitempty"`
 }

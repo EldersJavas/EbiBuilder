@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="599f6f23-5535-41c1-a3f1-4cda1c95b160" name="变更" comment="update 2022-07-18 10:11">
+    <list default="true" id="599f6f23-5535-41c1-a3f1-4cda1c95b160" name="变更" comment="update 2022-07-18 10:43">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/project_model.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/project_model.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/build.json" beforeDir="false" afterPath="$PROJECT_DIR$/examples/build.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +122,8 @@
     <MESSAGE value="update 2022-07-18 09:40" />
     <MESSAGE value="update 2022-07-18 09:47" />
     <MESSAGE value="update 2022-07-18 10:11" />
-    <option name="LAST_COMMIT_MESSAGE" value="update 2022-07-18 10:11" />
+    <MESSAGE value="update 2022-07-18 10:43" />
+    <option name="LAST_COMMIT_MESSAGE" value="update 2022-07-18 10:43" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
