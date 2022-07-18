@@ -37,7 +37,7 @@ func NewBuildCmd() *gcli.Command {
 			}
 
 			Pj.EbiVersion = v
-			err = BuildGame(c)
+			err = BuildGame()
 			if err != nil {
 				return err
 			}
@@ -48,7 +48,7 @@ func NewBuildCmd() *gcli.Command {
 	return a
 }
 
-func BuildGame(c *gcli.Command) error {
+func BuildGame() error {
 	var IsFileBuild = false
 	if Pj.EbiVersion == "" {
 		tool.ErrorPrint("No Ebitengine version")

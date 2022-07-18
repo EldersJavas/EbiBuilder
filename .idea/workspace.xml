@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="599f6f23-5535-41c1-a3f1-4cda1c95b160" name="变更" comment="update 2022-07-18 09:03">
+    <list default="true" id="599f6f23-5535-41c1-a3f1-4cda1c95b160" name="变更" comment="update 2022-07-18 09:31">
+      <changelist_data name="EldersJavas" email="eldersjavas@gmail.com" />
+      <change afterPath="$PROJECT_DIR$/app/clean.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.github/workflows/codeql-analysis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/codeql-analysis.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/EbiBuilder.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/EbiBuilder.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
@@ -28,6 +31,11 @@
   </component>
   <component name="GOROOT" url="file://$PROJECT_DIR$/../../Program Files/Go" />
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="EldersJavas &lt;eldersjavas@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -113,7 +121,9 @@
     <MESSAGE value="update 2022-07-17 22:25" />
     <MESSAGE value="update 2022-07-18 0:15" />
     <MESSAGE value="update 2022-07-18 09:03" />
-    <option name="LAST_COMMIT_MESSAGE" value="update 2022-07-18 09:03" />
+    <MESSAGE value="update 2022-07-18" />
+    <MESSAGE value="update 2022-07-18 09:31" />
+    <option name="LAST_COMMIT_MESSAGE" value="update 2022-07-18 09:31" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

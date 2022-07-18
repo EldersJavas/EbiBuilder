@@ -26,7 +26,7 @@ func NewCleanCmd() *gcli.Command {
 			}
 
 			Pj.EbiVersion = v
-			err = CleanGame(c)
+			err = CleanGame()
 			if err != nil {
 				return err
 			}
@@ -37,7 +37,7 @@ func NewCleanCmd() *gcli.Command {
 	return a
 }
 
-func CleanGame(c *gcli.Command) error {
+func CleanGame() error {
 	err := os.RemoveAll("output")
 	if err != nil {
 		return err

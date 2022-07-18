@@ -38,3 +38,15 @@ Available Commands:
 Use "EbiBuilder COMMAND -h" for more information about a command
 
 ```
+
+## Feature
+
+- [x] **Build**
+  - [x] Debug
+  - [x] Release
+- [x] **Clean**
+- [ ] **create**
+- [ ] config
+- [ ] **publish**
+  - [ ] **WASM**
+  - [ ] Mobile
