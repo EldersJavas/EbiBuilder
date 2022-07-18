@@ -14,14 +14,10 @@ var Pj Project
 
 func NewBuildCmd() *gcli.Command {
 	a := &gcli.Command{
-		Flags:     gcli.Flags{},
-		Arguments: gcli.Arguments{},
-		Name:      "build",
-		Desc:      "Build Ebitengine game",
-		Aliases:   []string{"Build", "BUILD", "buildgame"},
-		Category:  "",
+		Name:    "build",
+		Desc:    "Build Ebitengine game",
+		Aliases: []string{"Build", "BUILD", "buildgame"},
 		Config: func(c *gcli.Command) {
-
 			a := ""
 			c.StrOpt(&a, "buildmode", "m", "Debug", "the id option")
 			switch a {
@@ -33,8 +29,6 @@ func NewBuildCmd() *gcli.Command {
 				Pj.BuildMode = All
 			}
 		},
-		Hidden:   false,
-		Subs:     []*gcli.Command{},
 		Examples: "ebibuilder build",
 		Func: func(c *gcli.Command, args []string) error {
 			v, err := tool.GetEbitenVer()
@@ -50,8 +44,6 @@ func NewBuildCmd() *gcli.Command {
 			return nil
 		},
 		Help: "Build the game",
-		HelpRender: func(c *gcli.Command) {
-		},
 	}
 	return a
 }

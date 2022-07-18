@@ -14,7 +14,7 @@ var App = app.App
 
 func main() {
 
-	//////////////////////
+	//////////////////////del
 	err := os.Chdir("examples")
 	if err != nil {
 		return
@@ -25,7 +25,7 @@ func main() {
 	}
 	tool.DebugPrint(t)
 
-	///////////////////////
+	///////////////////////del
 
 	if tool.CheckGo() != true {
 		tool.ErrorPrint("Go version less than v1.15")
