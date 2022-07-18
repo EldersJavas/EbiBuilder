@@ -38,9 +38,12 @@ func NewCleanCmd() *gcli.Command {
 }
 
 func CleanGame() error {
+	tool.StepPrint("Clean Start")
 	err := os.RemoveAll("output")
 	if err != nil {
 		return err
 	}
+
+	tool.SuccessPrint("Clean Success")
 	return nil
 }

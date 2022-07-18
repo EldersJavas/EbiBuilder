@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="599f6f23-5535-41c1-a3f1-4cda1c95b160" name="变更" comment="update 2022-07-18 09:40" />
+    <list default="true" id="599f6f23-5535-41c1-a3f1-4cda1c95b160" name="变更" comment="update 2022-07-18 09:47">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/clean.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/clean.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,6 +71,7 @@
     <configuration name="go build github.com/EldersJavas/EbiBuilder" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="EbiBuilder" />
       <working_directory value="$PROJECT_DIR$" />
+      <parameters value="help" />
       <kind value="PACKAGE" />
       <package value="github.com/EldersJavas/EbiBuilder" />
       <directory value="$PROJECT_DIR$" />
@@ -113,7 +121,8 @@
     <MESSAGE value="update 2022-07-18" />
     <MESSAGE value="update 2022-07-18 09:31" />
     <MESSAGE value="update 2022-07-18 09:40" />
-    <option name="LAST_COMMIT_MESSAGE" value="update 2022-07-18 09:40" />
+    <MESSAGE value="update 2022-07-18 09:47" />
+    <option name="LAST_COMMIT_MESSAGE" value="update 2022-07-18 09:47" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

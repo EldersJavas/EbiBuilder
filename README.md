@@ -20,10 +20,10 @@ Usage:
   EbiBuilder [global options...] COMMAND [--options ...] [arguments ...]                            
   EbiBuilder [global options...] COMMAND [--options ...] SUBCOMMAND [--options ...] [arguments ...] 
                                                                                                         
-Global Options:
-  -h, --help                Display the help information
-  --ishell                  Run in an interactive shell environment(TODO)
-  --nc, --no-color          Disable color when outputting message
+Global Options:                                                                                                                             
+  -h, --help                Display the help information                                                                                    
+  --ishell                  Run in an interactive shell environment(TODO)                                                                   
+  --nc, --no-color          Disable color when outputting message                                                                           
   --ni, --no-interactive    Disable interactive confirmation operation
   --np, --no-progress       Disable display progress message
   --verbose                 Set logs reporting level(quiet 0 - 5 crazy) (default 1=error)
@@ -33,6 +33,7 @@ Available Commands:
   build        Build Ebitengine game (alias: Build,BUILD,buildgame)
   clean        Clean build (alias: Clean,CLEAN)
   genac        Generate auto complete scripts for current application (alias: gen-ac)
+  self-update  Self-update (alias: Self-update,selfupdate,Selfupdate)
   help         Display help information
 
 Use "EbiBuilder COMMAND -h" for more information about a command
@@ -41,12 +42,16 @@ Use "EbiBuilder COMMAND -h" for more information about a command
 
 ## Feature
 
-- [x] **Build**
+- [x] **build**
   - [x] Debug
   - [x] Release
-- [x] **Clean**
-- [ ] **create**
-- [ ] config
 - [ ] **publish**
   - [ ] **WASM**
   - [ ] Mobile
+- [x] **clean**
+- [ ] **create**
+- [ ] config
+- [ ] check
+  - [ ] test
+  - [ ] upgrade
+- [x] self-update

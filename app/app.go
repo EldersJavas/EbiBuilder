@@ -23,8 +23,6 @@ var App = gcli.NewApp(func(app *gcli.App) {
 ╚══════╝╚═════╝ ╚═╝╚═════╝  ╚═════╝ ╚═╝╚══════╝╚═════╝ ╚══════╝╚═╝  ╚═╝
                                                                        
 		`
-
-	app.Add(BuildCmd)
-	app.Add(CleanCmd)
+	app.Add(SelfUpdateCmd, CleanCmd, BuildCmd)
 	app.Add(builtin.GenAutoComplete())
 })
