@@ -8,7 +8,7 @@
 [![wakatime](https://wakatime.com/badge/user/251739d5-2666-4202-9df0-c3b0c64457e4/project/70119925-9677-4119-a10d-db940e271e6a.svg)](https://wakatime.com/badge/user/251739d5-2666-4202-9df0-c3b0c64457e4/project/70119925-9677-4119-a10d-db940e271e6a)
 
 
-The builder for Ebitengine.
+The builder for [Ebitengine](https://github.com/hajimehoshi/ebiten).
 
 A tool for managing & building the ebitengine game.
 
