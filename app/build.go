@@ -19,7 +19,9 @@ func NewBuildCmd() *gcli.Command {
 		Aliases: []string{"Build", "BUILD", "buildgame"},
 		Config: func(c *gcli.Command) {
 			a := ""
-			c.StrOpt(&a, "buildmode", "m", "Debug", "the id option")
+			c.StrOpt(&a, "buildmode", "m", "Debug", "Build Mode")
+			c.StrOpt(&Pj.OutputName, "outputname", "n", "Game", "Game output name")
+			c.StrOpt(&Pj.Iconfile, "icon", "ico", "favicon.ico", "icon file")
 			switch a {
 			case "Debug":
 				Pj.BuildMode = Debug
@@ -61,49 +63,88 @@ func BuildGame() error {
 	///////////////////////////////
 	// Debug
 	case Debug:
-		err := os.MkdirAll("output/Debug/", 777)
-		if err != nil {
+		if err := DebugBuild(IsFileBuild); err != nil {
 			return err
 		}
-		if IsFileBuild {
-			_, err = sysutil.QuickExec(fmt.Sprintf("go build -o %v -tags=ebitendebug main.go", tool.ExecName("debug")))
-		} else {
-			_, err = sysutil.ExecCmd("go", []string{"build", "-tags=ebitendebug", "-o", tool.ExecName("debug")})
-		}
-
-		if err != nil {
-			return err
-		}
-
-		err = fsutil.CopyFile(tool.ExecName("debug"), "output/Debug/"+tool.ExecName("debug"))
-		if err != nil {
-			return err
-		}
-
-		err = fsutil.DeleteIfExist(tool.ExecName("debug"))
-		if err != nil {
-			return err
-		}
-
 		tool.SuccessPrint("Debug build Success")
-
-		////////////////////////////////
-
+		// Release
 	case Release:
-		err := os.MkdirAll("output/Release/", 777)
+		if err := ReleaseBuild(IsFileBuild); err != nil {
+			return err
+		}
+		tool.SuccessPrint("Release build Success")
 
-		if err != nil {
-			return err
-		}
-		tool.SuccessPrint("test")
+		///////////////////////////////////
 	case All:
-		err := os.MkdirAll("output/Debug/", 777)
-		err = os.MkdirAll("output/Release/", 777)
+		err := DebugBuild(IsFileBuild)
 		if err != nil {
 			return err
 		}
-		tool.SuccessPrint("test")
+		tool.SuccessPrint("Debug build Success")
+		err = ReleaseBuild(IsFileBuild)
+		if err != nil {
+			return err
+		}
+		tool.SuccessPrint("Release build Success")
 
 	}
+	return nil
+}
+
+func DebugBuild(IsFileBuild bool) error {
+
+	err := os.MkdirAll("output/Debug/", 777)
+	if err != nil {
+		return err
+	}
+	if IsFileBuild {
+		_, err = sysutil.QuickExec(fmt.Sprintf("go build -o %v -tags=ebitendebug main.go", tool.ExecName(Pj.OutputName)))
+	} else {
+		_, err = sysutil.ExecCmd("go", []string{"build", "-tags=ebitendebug", "-o", tool.ExecName(Pj.OutputName)})
+	}
+
+	if err != nil {
+		return err
+	}
+
+	err = fsutil.CopyFile(tool.ExecName(Pj.OutputName), "output/Debug/"+tool.ExecName(Pj.OutputName))
+	if err != nil {
+		return err
+	}
+
+	err = fsutil.DeleteIfExist(tool.ExecName(Pj.OutputName))
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func ReleaseBuild(IsFileBuild bool) error {
+
+	err := os.MkdirAll("output/Release/", 777)
+	if err != nil {
+		return err
+	}
+	if IsFileBuild {
+		_, err = sysutil.QuickExec(fmt.Sprintf("go build -o %v main.go", tool.ExecName(Pj.OutputName)))
+	} else {
+		_, err = sysutil.ExecCmd("go", []string{"build", "-o", tool.ExecName(Pj.OutputName)})
+	}
+
+	if err != nil {
+		return err
+	}
+
+	err = fsutil.CopyFile(tool.ExecName(Pj.OutputName), "output/Release/"+tool.ExecName(Pj.OutputName))
+	if err != nil {
+		return err
+	}
+
+	err = fsutil.DeleteIfExist(tool.ExecName(Pj.OutputName))
+	if err != nil {
+		return err
+	}
+
 	return nil
 }

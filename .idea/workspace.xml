@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="599f6f23-5535-41c1-a3f1-4cda1c95b160" name="变更" comment="update 2022-07-18 11:38">
+    <list default="true" id="599f6f23-5535-41c1-a3f1-4cda1c95b160" name="变更" comment="update 2022-07-19 09:36">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/create.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/create.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tool/tool.go" beforeDir="false" afterPath="$PROJECT_DIR$/tool/tool.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tool/tool_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/tool/tool_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,10 +147,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go 构建.go build github.com/EldersJavas/EbiBuilder" />
         <item itemvalue="Go 测试.go test github.com/EldersJavas/EbiBuilder/tool" />
         <item itemvalue="Go 测试.gobench github.com/EldersJavas/EbiBuilder/tool" />
         <item itemvalue="Go 测试.github.com/EldersJavas/EbiBuilder/tool 中的 TestExecName" />
-        <item itemvalue="Go 构建.go build github.com/EldersJavas/EbiBuilder" />
         <item itemvalue="Go 构建.go build github.com/EldersJavas/EbiBuilder/examples" />
       </list>
     </recent_temporary>
@@ -187,7 +183,8 @@
     <MESSAGE value="update 2022-07-18 10:43" />
     <MESSAGE value="update 2022-07-18 11:14" />
     <MESSAGE value="update 2022-07-18 11:38" />
-    <option name="LAST_COMMIT_MESSAGE" value="update 2022-07-18 11:38" />
+    <MESSAGE value="update 2022-07-19 09:36" />
+    <option name="LAST_COMMIT_MESSAGE" value="update 2022-07-19 09:36" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
