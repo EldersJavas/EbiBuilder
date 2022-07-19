@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-{{/*Created by EbiBuilder)*/}}
+{{/*(Created by EbiBuilder)*/}}
 <html>
-<head><title>{{.title}}</title></head>
+<head><title>{{.Title}}</title></head>
 
 <body>
 <script src="wasm_exec.js"></script>
@@ -13,7 +13,7 @@
 		};
 	}
 	const go = new Go();
-	WebAssembly.instantiateStreaming(fetch("{{.gamename}}.wasm"), go.importObject).then(result => {
+	WebAssembly.instantiateStreaming(fetch("{{.Gamename}}.wasm"), go.importObject).then(result => {
 		go.run(result.instance);
 	});
 </script>

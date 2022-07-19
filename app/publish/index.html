@@ -1,27 +1,28 @@
 
 <!DOCTYPE html>
-{{/*Created by EbiBuilder)*/}}
+{{/*(Created by EbiBuilder)*/}}
 <html>
     <head>
-    <meta charset="utf-8">
-    {{ if .Redirect }}<meta http-equiv="refresh" content="0;url={{.Redirect}}">{{ end }}
-    <meta name="description" content="{{.Desc}}">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#db5620">
-    <meta property="og:title" content="{{.Title}}">
-    <meta property="og:site_name" content="Ebitengine - 一款Go语言编写的超级简单2D游戏引擎">
-    <meta property="og:image" content="{{.Share}}">
-    <meta property="og:description" content="{{.Desc}}">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@hajimehoshi">
-    <meta name="twitter:title" content="{{.Title}}">
-    <meta name="twitter:description" content="{{.Desc}}">
-    <meta name="twitter:image" content="{{.Share}}">
-    <title>{{.Title}}</title>
-    <link rel="icon" href="/images/favicon.png" type="image/icon">
+        <meta charset="utf-8">
 
+        <meta name="description" content="{{.Desc}}">
 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <meta property="og:title" content="{{.Title}}">
+        <meta property="og:site_name" content="{{.SiteName}}">
+        <meta property="og:image" content="{{.Share}}">
+        <meta property="og:description" content="{{.Desc}}">
 
-<iframe src="game.html"></iframe>
+        <title>{{.Title}}</title>
+        <link rel="icon" href="favicon.ico" type="image/icon">
+
+    </head>
+
+    <body>
+        <iframe src="game.html" allow="autoplay"></iframe>
+    </body>
+
+</html>
+
 
