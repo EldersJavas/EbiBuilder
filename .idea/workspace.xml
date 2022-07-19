@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="599f6f23-5535-41c1-a3f1-4cda1c95b160" name="变更" comment="updates 2022-07-19 10:14:03">
+    <list default="true" id="599f6f23-5535-41c1-a3f1-4cda1c95b160" name="变更" comment="updates 2022-07-19 10:53:25">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/project_model.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/project_model.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/publish.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/publish.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -190,7 +187,8 @@
     <MESSAGE value="update 2022-07-18 11:38" />
     <MESSAGE value="update 2022-07-19 09:36" />
     <MESSAGE value="updates 2022-07-19 10:14:03" />
-    <option name="LAST_COMMIT_MESSAGE" value="updates 2022-07-19 10:14:03" />
+    <MESSAGE value="updates 2022-07-19 10:53:25" />
+    <option name="LAST_COMMIT_MESSAGE" value="updates 2022-07-19 10:53:25" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

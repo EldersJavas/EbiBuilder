@@ -3,6 +3,7 @@
 package app
 
 import (
+	"embed"
 	"fmt"
 	"github.com/EldersJavas/EbiBuilder/tool"
 	"github.com/gookit/goutil/fsutil"
@@ -10,6 +11,9 @@ import (
 	"os"
 	"syscall"
 )
+
+//go:embed publish/
+var WASMfile embed.FS
 
 // TODO: Publish cmd
 
@@ -55,5 +59,6 @@ func PublishWASM() error {
 	}
 
 	tool.SuccessPrint("Publish wasm Success")
+	//plugin.Open("")
 	return nil
 }
