@@ -3,6 +3,7 @@
 package app
 
 import (
+	"errors"
 	"github.com/EldersJavas/EbiBuilder/tool"
 	"github.com/gookit/color"
 	"github.com/gookit/gcli/v3"
@@ -75,6 +76,10 @@ func ConfigGame() error {
 
 func InitConfig() error {
 	tool.StepPrint("Init config Start")
+	////////////////////////////////////////////////////
+	if _, err := os.ReadFile("build.json"); err != nil {
+		return errors.New("build.json was already created")
+	}
 	a, b := tool.IsEbitenGame()
 	v, err := tool.GetEbitenVer()
 	if err != nil {
@@ -102,12 +107,14 @@ func InitConfig() error {
 	if err != nil {
 		return err
 	}
-	tool.SuccessPrint("Init Config Success, file name:config.json")
+	////////////////////////////////////////
+	tool.SuccessPrint("Init Config Success, file name: build.json")
 	return nil
 }
 
 func PrintConfig() error {
 	tool.StepPrint("Print config Start")
+	/////////////////////////////////////////////
 	file, err := os.ReadFile("build.json")
 	if err != nil {
 		return err
@@ -123,10 +130,16 @@ func PrintConfig() error {
 	case Release:
 		bm = "Debug"
 	case All:
-		bm = "Debug,Release"
+		bm = "Debug, Release"
+	}
+
+	getwd, err := os.Getwd()
+	if err != nil {
+		return err
 	}
 	color.Printf(
 		`
+Path: %v/build.json		
 
 <cyan>Go mod</>:     		 <red>%v</>
 <cyan>Ebiten v1</>:  		 <red>%v</>
@@ -138,7 +151,8 @@ func PrintConfig() error {
 <cyan>Game Name</>:    		 %v
 <cyan>Game version</>: 		 <yellow>%v</>
 
-`, proj.IsGomod, proj.IsEbitenv1, proj.EbiVersion, bm, proj.OutputName, proj.Config, proj.Path, proj.GameName, proj.GameVersion)
+`, getwd, proj.IsGomod, proj.IsEbitenv1, proj.EbiVersion, bm, proj.OutputName, proj.Config, proj.Path, proj.GameName, proj.GameVersion)
+	/////////////////////////////////////////////
 	tool.SuccessPrint("Print config Success")
 	return nil
 }

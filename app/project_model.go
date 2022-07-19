@@ -28,4 +28,5 @@ type Project struct {
 	Path        string `json:"Path,omitempty"`
 	GameName    string `json:"GameName,omitempty"`
 	GameVersion string `json:"GameVersion,omitempty"`
+	Iconfile    string `json:"Iconfile,omitempty"`
 }

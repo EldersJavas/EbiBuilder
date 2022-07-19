@@ -50,9 +50,9 @@ Use "EbiBuilder COMMAND -h" for more information about a command
   - [ ] Mobile
 - [x] **clean**
 - [ ] **create**
-- [ ] config
+- [x] config
   - [x] init
-  - [ ] print
+  - [x] print
 - [ ] check
   - [ ] test
   - [ ] upgrade

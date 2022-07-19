@@ -6,7 +6,6 @@ import (
 	"github.com/gookit/color"
 	"github.com/gookit/goutil/sysutil"
 	"github.com/hashicorp/go-version"
-	"log"
 	"os"
 	"runtime"
 	"strings"
@@ -34,6 +33,7 @@ func CheckGo() bool {
 	return true
 }
 
+// IsEbitenGame check ebitengine game project
 func IsEbitenGame() (ebitengame bool, gomod bool) {
 
 	var Versions string
@@ -46,7 +46,7 @@ func IsEbitenGame() (ebitengame bool, gomod bool) {
 			}
 		}
 		if err != nil {
-			log.Println("No Ebitengine project in the dir.")
+			WarnPrint("No Ebitengine project in the dir.")
 			return false, false
 		}
 	}
@@ -58,12 +58,14 @@ func IsEbitenGame() (ebitengame bool, gomod bool) {
 	if Versions == "" {
 		return false, false
 	}
-	DebugPrint(fmt.Sprintf("ebiten version=%v", Versions))
+	//DebugPrint(fmt.Sprintf("ebiten version=%v", Versions))
 	if Versions == "2.x" {
 		return true, false
 	}
 	return true, true
 }
+
+// GetEbitenVer Get Ebitengine version
 func GetEbitenVer() (string, error) {
 	var Versions string
 	f, err := os.ReadFile("./go.mod")
@@ -84,7 +86,7 @@ func GetEbitenVer() (string, error) {
 		}
 	}
 	if Versions == "" {
-		return "", errors.New("no Ebitengine project in the dir")
+		return "", errors.New("unable to locate ebitengine version number")
 	}
 
 	DebugPrint(fmt.Sprintf("ebiten version=%v", Versions))
