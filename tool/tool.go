@@ -12,6 +12,7 @@ import (
 	"time"
 )
 
+// CheckGo check golang
 func CheckGo() bool {
 	var Outgo, err = sysutil.QuickExec("go version")
 	if err != nil {

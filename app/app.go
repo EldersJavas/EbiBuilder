@@ -23,6 +23,7 @@ var App = gcli.NewApp(func(app *gcli.App) {
 ╚══════╝╚═════╝ ╚═╝╚═════╝  ╚═════╝ ╚═╝╚══════╝╚═════╝ ╚══════╝╚═╝  ╚═╝
                                                                        
 		`
-	app.Add(SelfUpdateCmd, CleanCmd, BuildCmd, ConfigCmd)
+	app.Add(SelfUpdateCmd, CleanCmd, BuildCmd, ConfigCmd, CreateCmd)
 	app.Add(builtin.GenAutoComplete())
+	app.Add(builtin.GenEmojiMap)
 })
