@@ -3,9 +3,9 @@ package app
 import "encoding/json"
 
 const (
-	Debug = iota
-	Release
-	All
+	Debug   = "Debug"
+	Release = "Release"
+	All     = "All"
 )
 
 func UnmarshalProject(data []byte) (Project, error) {
@@ -22,7 +22,7 @@ type Project struct {
 	IsGomod     bool   `json:"IsGomod,omitempty"`
 	IsEbitenv1  bool   `json:"IsEbitenv1,omitempty"`
 	EbiVersion  string `json:"EbiVersion,omitempty"`
-	BuildMode   uint   `json:"BuildMode,omitempty"`
+	BuildMode   string `json:"BuildMode,omitempty"`
 	OutputName  string `json:"OutputName,omitempty"`
 	Config      string `json:"Config,omitempty"`
 	Path        string `json:"Path,omitempty"`

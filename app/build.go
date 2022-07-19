@@ -9,8 +9,9 @@ import (
 	"os"
 )
 
-var BuildCmd = NewBuildCmd()
 var Pj Project
+
+var BuildCmd = NewBuildCmd()
 
 func NewBuildCmd() *gcli.Command {
 	a := &gcli.Command{
@@ -18,18 +19,9 @@ func NewBuildCmd() *gcli.Command {
 		Desc:    "Build Ebitengine game",
 		Aliases: []string{"Build", "BUILD", "buildgame"},
 		Config: func(c *gcli.Command) {
-			a := ""
-			c.StrOpt(&a, "buildmode", "m", "Debug", "Build Mode")
+			c.StrOpt(&Pj.BuildMode, "buildmode", "m", "Debug", "Build Mode")
 			c.StrOpt(&Pj.OutputName, "outputname", "n", "Game", "Game output name")
-			c.StrOpt(&Pj.Iconfile, "icon", "ico", "favicon.ico", "icon file")
-			switch a {
-			case "Debug":
-				Pj.BuildMode = Debug
-			case "Release":
-				Pj.BuildMode = Release
-			case "All":
-				Pj.BuildMode = All
-			}
+			c.StrOpt(&Pj.Iconfile, "icon", "i", "favicon.ico", "icon file")
 		},
 		Examples: "ebibuilder build",
 		Func: func(c *gcli.Command, args []string) error {
@@ -92,11 +84,13 @@ func BuildGame() error {
 }
 
 func DebugBuild(IsFileBuild bool) error {
-
+	tool.StepPrint("Build Debug Start")
+	tool.StepPrint("Create dir...")
 	err := os.MkdirAll("output/Debug/", 777)
 	if err != nil {
 		return err
 	}
+	tool.StepPrint("Building...")
 	if IsFileBuild {
 		_, err = sysutil.QuickExec(fmt.Sprintf("go build -o %v -tags=ebitendebug main.go", tool.ExecName(Pj.OutputName)))
 	} else {
@@ -106,7 +100,7 @@ func DebugBuild(IsFileBuild bool) error {
 	if err != nil {
 		return err
 	}
-
+	tool.StepPrint("Managing...")
 	err = fsutil.CopyFile(tool.ExecName(Pj.OutputName), "output/Debug/"+tool.ExecName(Pj.OutputName))
 	if err != nil {
 		return err
@@ -121,11 +115,13 @@ func DebugBuild(IsFileBuild bool) error {
 }
 
 func ReleaseBuild(IsFileBuild bool) error {
-
+	tool.StepPrint("Build Release Start")
+	tool.StepPrint("Create dir...")
 	err := os.MkdirAll("output/Release/", 777)
 	if err != nil {
 		return err
 	}
+	tool.StepPrint("Building...")
 	if IsFileBuild {
 		_, err = sysutil.QuickExec(fmt.Sprintf("go build -o %v main.go", tool.ExecName(Pj.OutputName)))
 	} else {
@@ -135,7 +131,7 @@ func ReleaseBuild(IsFileBuild bool) error {
 	if err != nil {
 		return err
 	}
-
+	tool.StepPrint("Managing...")
 	err = fsutil.CopyFile(tool.ExecName(Pj.OutputName), "output/Release/"+tool.ExecName(Pj.OutputName))
 	if err != nil {
 		return err

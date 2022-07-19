@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="599f6f23-5535-41c1-a3f1-4cda1c95b160" name="变更" comment="update 2022-07-19 09:36">
+    <list default="true" id="599f6f23-5535-41c1-a3f1-4cda1c95b160" name="变更" comment="updates 2022-07-19 10:14:03">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/project_model.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/project_model.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/publish.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/publish.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +70,7 @@
     "configurable.GoLibrariesConfigurable.is.expanded": "true",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "D:/GitHub/EbiBuilder",
+    "last_opened_file_path": "D:/GitHub/EbiBuilder/examples",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
@@ -76,6 +79,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GitHub\EbiBuilder\examples" />
       <recent name="D:\GitHub\EbiBuilder" />
       <recent name="D:\GitHub\EbiBuilder\publish" />
     </key>
@@ -89,6 +93,7 @@
     <configuration name="go build github.com/EldersJavas/EbiBuilder" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="EbiBuilder" />
       <working_directory value="$PROJECT_DIR$/examples" />
+      <parameters value="build --buildmode=All" />
       <kind value="PACKAGE" />
       <package value="github.com/EldersJavas/EbiBuilder" />
       <directory value="$PROJECT_DIR$" />
@@ -184,9 +189,17 @@
     <MESSAGE value="update 2022-07-18 11:14" />
     <MESSAGE value="update 2022-07-18 11:38" />
     <MESSAGE value="update 2022-07-19 09:36" />
-    <option name="LAST_COMMIT_MESSAGE" value="update 2022-07-19 09:36" />
+    <MESSAGE value="updates 2022-07-19 10:14:03" />
+    <option name="LAST_COMMIT_MESSAGE" value="updates 2022-07-19 10:14:03" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="GoApplicationRunConfiguration">
+        <watch expression="*(*&quot;bool&quot;)(824635160171)" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
