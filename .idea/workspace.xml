@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="599f6f23-5535-41c1-a3f1-4cda1c95b160" name="变更" comment="updates 2022-07-19 10:53:25">
+    <list default="true" id="599f6f23-5535-41c1-a3f1-4cda1c95b160" name="变更" comment="updates 2022-07-19 11:12">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/create.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/create.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/publish.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/publish.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,15 +37,22 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../GOPATH/pkg/mod/github.com/gookit/goutil@v0.5.7/fsutil/operate.go" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/app/app.go" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/build.go" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/clean.go" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/config.go" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/const.go" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/create.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/demo/main.go.tmpl" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/project_model.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/publish.go" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/main.go" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/tool/tool.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Program Files/Go/src/embed/embed.go" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/../../Program Files/Go/src/os/types.go" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/../../Program Files/Go/src/text/template/exec.go" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/../../Program Files/Go/src/text/template/helper.go" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -71,7 +84,7 @@
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+    "settings.editor.selected.configurable": "go.autoimport"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -90,7 +103,7 @@
     <configuration name="go build github.com/EldersJavas/EbiBuilder" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="EbiBuilder" />
       <working_directory value="$PROJECT_DIR$/examples" />
-      <parameters value="build --buildmode=All" />
+      <parameters value="create" />
       <kind value="PACKAGE" />
       <package value="github.com/EldersJavas/EbiBuilder" />
       <directory value="$PROJECT_DIR$" />
@@ -188,7 +201,9 @@
     <MESSAGE value="update 2022-07-19 09:36" />
     <MESSAGE value="updates 2022-07-19 10:14:03" />
     <MESSAGE value="updates 2022-07-19 10:53:25" />
-    <option name="LAST_COMMIT_MESSAGE" value="updates 2022-07-19 10:53:25" />
+    <MESSAGE value="updates 2022-07-19 11:11:41" />
+    <MESSAGE value="updates 2022-07-19 11:12" />
+    <option name="LAST_COMMIT_MESSAGE" value="updates 2022-07-19 11:12" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

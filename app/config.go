@@ -77,7 +77,7 @@ func ConfigGame() error {
 func InitConfig() error {
 	tool.StepPrint("Init config Start")
 	////////////////////////////////////////////////////
-	if _, err := os.ReadFile("build.json"); err != nil {
+	if _, err := os.ReadFile("build.json"); err == nil {
 		return errors.New("build.json was already created")
 	}
 	a, b := tool.IsEbitenGame()
@@ -103,7 +103,7 @@ func InitConfig() error {
 	if err != nil {
 		return err
 	}
-	err = os.WriteFile("build.json", j, 777)
+	err = os.WriteFile("build.json", j, 0777)
 	if err != nil {
 		return err
 	}

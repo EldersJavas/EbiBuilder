@@ -86,7 +86,7 @@ func BuildGame() error {
 func DebugBuild(IsFileBuild bool) error {
 	tool.StepPrint("Build Debug Start")
 	tool.StepPrint("Create dir...")
-	err := os.MkdirAll("output/Debug/", 777)
+	err := os.MkdirAll("output/Debug/", 0777)
 	if err != nil {
 		return err
 	}

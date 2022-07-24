@@ -12,7 +12,7 @@ import (
 	"syscall"
 )
 
-//go:embed publish/
+//go:embed publish
 var WASMfile embed.FS
 
 // TODO: Publish cmd
