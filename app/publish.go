@@ -8,12 +8,14 @@ import (
 	"github.com/EldersJavas/EbiBuilder/tool"
 	"github.com/gookit/goutil/fsutil"
 	"github.com/gookit/goutil/sysutil"
+	"io/fs"
 	"os"
 	"syscall"
 )
 
 //go:embed publish
 var WASMfile embed.FS
+var WF fs.FS
 
 // TODO: Publish cmd
 
@@ -34,8 +36,11 @@ func PublishWASM() error {
 	if err != nil {
 		return err
 	}
-
-	err = os.MkdirAll("publish/wasm", 777)
+	//open, err := WF.Open()
+	if err != nil {
+		return err
+	}
+	err = os.MkdirAll("publish/wasm", 0777)
 	if err != nil {
 		return err
 	}
