@@ -21,13 +21,13 @@ Usage:
   EbiBuilder [global options...] COMMAND [--options ...] [arguments ...]                            
   EbiBuilder [global options...] COMMAND [--options ...] SUBCOMMAND [--options ...] [arguments ...] 
                                                                                                                                          
-Global Options:                                                                                                                             
-  -h, --help                Display the help information                                                                                    
-  --ishell                  Run in an interactive shell environment(TODO)                                                                   
-  --nc, --no-color          Disable color when outputting message                                                                           
-  --ni, --no-interactive    Disable interactive confirmation operation                                                                      
-  --np, --no-progress       Disable display progress message                                                                                
-  --verbose                 Set logs reporting level(quiet 0 - 5 crazy) (default 1=error)                                                   
+Global Options:
+  -h, --help                Display the help information
+  --ishell                  Run in an interactive shell environment(TODO)
+  --nc, --no-color          Disable color when outputting message
+  --ni, --no-interactive    Disable interactive confirmation operation
+  --np, --no-progress       Disable display progress message
+  --verbose                 Set logs reporting level(quiet 0 - 5 crazy) (default 1=error)
   -V, --version             Display app version information
 
 Available Commands:
@@ -40,27 +40,25 @@ Available Commands:
   self-update  Self-update (alias: Self-update,selfupdate,Selfupdate)
   help         Display help information
 
-
 Use "EbiBuilder COMMAND -h" for more information about a command
-
 ```
 
 ## Feature
 
-- [x] **build**
-  - [x] Debug
+- [x] **build** _[WIP]_
+  - [x] Debug 
   - [x] Release
-- [ ] **publish**
-  - [ ] **WASM**
-  - [ ] Mobile
+- [ ] **publish** 
+  - [ ] **WASM** _[20%]_
+  - [ ] ~~Mobile~~ _[Pause]_
 - [x] **clean**
-- [ ] **create**
+- [x] **create** _[WIP]_
 - [x] config
   - [x] init
   - [x] print
 - [ ] check
-  - [ ] test
-  - [ ] upgrade
+  - [ ] test 
+  - [ ] ~~upgrade~~ _[Pause]_
 - [x] self-update
 
 
